@@ -12,8 +12,8 @@ app = Flask(__name__)
 @app.get("/")
 def hello():
     """Return a friendly HTTP greeting."""
-    who = request.args.get("who", default="World")
-    return f"Hello {who}!\n"
+    who = request.args.get("who", default="Allen")
+    return f"Hello {who}!!\n"
 
 @app.get("/ipa")
 def return_ipa():
