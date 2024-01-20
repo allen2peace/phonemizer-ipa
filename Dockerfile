@@ -1,4 +1,5 @@
-FROM python:3.10-slim
+# FROM python:3.10-slim
+FROM ubuntu:18.04
 
 ENV PYTHONUNBUFFERED True
 ENV DEBIAN_FRONTEND=noninteractive
@@ -17,8 +18,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # RUN apt-get install festival espeak-ng mbrola
 
-RUN apt-get update && apt-get install -y \
-    espeak-ng \
-    festival \
+RUN apt-get update && apt-get install -y espeak-ng
 
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
