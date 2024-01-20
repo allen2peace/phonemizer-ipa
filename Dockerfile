@@ -1,6 +1,6 @@
-# FROM python:3.10-slim
-# FROM ubuntu:18.04
-FROM alpine:3.14
+FROM ubuntu:23.10
+FROM python:3.10-slim
+# FROM alpine:3.14
 
 ENV PYTHONUNBUFFERED True
 ENV DEBIAN_FRONTEND=noninteractive
