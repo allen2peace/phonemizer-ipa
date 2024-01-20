@@ -17,6 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # RUN apt-get install festival espeak-ng mbrola
 
-RUN apt update && apt install -y espeak-ng
+RUN apt-get update && apt-get install -y \
+    espeak-ng \
+    festival \
 
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
